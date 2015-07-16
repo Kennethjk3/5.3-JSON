@@ -1,43 +1,67 @@
 class AthletesController < ApplicationController
 
   def index
-    @athletes = athlete.all
-    responds_to :html, :json
+    @athletes = Athlete.all
+    respond_to :html, :json
   end
 
   def show
     @athlete = find_athlete
+
+    respond_to do |format|
+      format.html action: :index
+      format.json { render json: @athlete }
+    end
   end
 
   def create
-    @athlete = athlete.new(athlete_parms)
+    @athlete = Athlete.new(athlete_parms)
 
     respond_to do |format|
       if @athlete.save
         format.html { redirect_to action: :index }
-        format.json { render :index }, status: 201
+        format.json { render json: @athletes }
       else
         format.html { render :index }
-        format.json { render json: @athlete.errors }, status: 400
+        format.json { render json: @athlete.errors }
       end
     end
   end
 
+
   def update
     @athlete = find_athlete
-    @athlete.update_attributes(athlete_params)
-    redirect_to action: :index
+    u = @athlete.update_attributes(athlete_params)
+
+    respond_to do |format|
+      format.html {
+        if u
+          flash[:notice] = "Successfully updated Athlete."
+          redirect_to action: :index
+        else
+          render action: :edit
+        end
+      }
+      format.json {
+        if u
+          render json: :index
+        else
+          render json: :edit
+        end
+      }
+    end
   end
 
   def destroy
     @athlete = find_athlete
     @athlete.destroy
-    respond_to do |format|
+    respond_with @athlete do |format|
       format.html { redirect_to action: :index, notice: 'Task was successfully destroyed.' }
-      format.json { head :no_content }, status: 202
+      format.json { head :no_content }
     end
     redirect_to action: :index
   end
+
 
     # def new
     #   @athlete = athlete.new
