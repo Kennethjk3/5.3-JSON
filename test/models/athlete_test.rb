@@ -4,7 +4,7 @@ class AthleteTest < ActiveSupport::TestCase
 
   def setup
     @athlete1 = athletes(:one)
-    @athlete2 = athletes(:twp)
+    @athlete2 = athletes(:two)
   end
 
   test "athlete1 is valid" do
@@ -15,7 +15,7 @@ class AthleteTest < ActiveSupport::TestCase
     assert @athlete2.valid?
   end
   #
-  # test "" do
+  # test "sport has value" do
   # end
   #
   # test "" do

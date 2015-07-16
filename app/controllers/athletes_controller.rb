@@ -10,12 +10,12 @@ class AthletesController < ApplicationController
 
     respond_to do |format|
       format.html action: :index
-      format.json { render json: @athlete }
+      format.json { render json: @athletes }
     end
   end
 
   def create
-    @athlete = Athlete.new(athlete_parms)
+    @athlete = Athlete.new(athlete_params)
 
     respond_to do |format|
       if @athlete.save
@@ -55,12 +55,12 @@ class AthletesController < ApplicationController
   def destroy
     @athlete = find_athlete
     @athlete.destroy
-    respond_with @athlete do |format|
-      format.html { redirect_to action: :index, notice: 'Task was successfully destroyed.' }
+    respond_to do |format|
+      # format.html { redirect_to action: :index, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to action: :index
   end
+
 
 
     # def new
@@ -80,5 +80,4 @@ class AthletesController < ApplicationController
   def athlete_params
     params.require(:athlete).permit(:nome, :nascita, :sport, :squadra, :altezza, :peso, :retired)
   end
-
 end
