@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716082903) do
+ActiveRecord::Schema.define(version: 20150716090058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150716082903) do
     t.date     "nascita",                           null: false
     t.string   "sport",                             null: false
     t.string   "squadra",    default: "Free Agent", null: false
-    t.string   "altezza"
-    t.string   "peso"
+    t.string   "altezza",                           null: false
+    t.string   "peso",                              null: false
     t.boolean  "retired",    default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
