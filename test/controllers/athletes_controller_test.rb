@@ -17,7 +17,7 @@ class AthletesControllerTest < ActionController::TestCase
   end
 
   test "POST create an athlete" do
-    assert_difference('Athlete.count', 1) do
+    assert_difference('athlete.count', 1) do
     post :create, format: :json, athlete: { sport: 'test sport', nome: 'test nome', peso: '180', altezza: 'test altezza', squadra: 'test record' }
     end
     assert_response :success
@@ -38,8 +38,8 @@ class AthletesControllerTest < ActionController::TestCase
   end
 
   test 'DELETE destroy does in fact destroy' do
-    assert_difference('athlete.count', -1) do
-      delete :no_content, id: @athlete1.id, format: :json
+    assert_difference('athletes.count', -1) do
+      delete :no_content, id: @athlete.id, format: :json
     end
   end
   # test 'GET ' do
