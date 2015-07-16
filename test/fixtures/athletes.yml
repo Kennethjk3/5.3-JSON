@@ -6,11 +6,11 @@ one:
   squadra: Da Ruckus
   altezza: 5ft 11in
   peso: 165lbs
-  retired: false
+  retired:
 
 two:
     nome: Super Mario
-    nascita: 08-08-89
+    nascita: 8/8/89
     sport: Saving Princesses
     squadra:
     altezza: short

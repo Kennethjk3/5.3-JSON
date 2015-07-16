@@ -7,11 +7,13 @@ class AthleteTest < ActiveSupport::TestCase
     @athlete2 = athletes(:twp)
   end
 
-  # test "" do
-  # end
+  test "athlete1 is valid" do
+    assert @athlete1.valid?
+  end
   #
-  # test "" do
-  # end
+  test "athlete2 is valid" do
+    assert @athlete2.valid?
+  end
   #
   # test "" do
   # end

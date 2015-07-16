@@ -1,5 +1,6 @@
 require 'test_helper'
-class AthletesControllerTest < ApplicationController::TestCase
+
+class AthletesControllerTest < ActionController::TestCase
 
   def setup
     @athlete1 = athletes(:one)
