@@ -1,11 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  nome: Ken Kier
+  nascita: 1989-08-08
+  sport: Soccer
+  squadra: Da Ruckus
+  altezza: 5ft 11in
+  peso: 165lbs
+  retired:
+
+two:
+    nome: Super Mario
+    nascita: 8/8/89
+    sport: Saving Princesses
+    altezza: short
+    peso: light
+    retired: true
